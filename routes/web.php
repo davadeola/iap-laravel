@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/car', 'CarController@allcars');
+Route::get('/car/{id}', 'CarController@particularcar');
+Route::get('/new', 'CarController@newcarform') ;
+Route::post('/car', 'CarController@newcar');
