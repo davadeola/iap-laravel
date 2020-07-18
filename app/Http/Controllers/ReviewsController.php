@@ -25,7 +25,8 @@ class ReviewsController extends Controller
     public function cardetails($id){
 
         $review = Review::where('id', $id)->get();
-        // $car = Car::where('id', $review->id)->get();
-        return view('carreview', ['reviews' => $review]);
+        
+         $car = Car::where('id', $review[0]->car)->get();
+        return view('carreview', ['car' => $car[0]]);
     }
 }
